@@ -9,10 +9,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function canSerializeToJSON() {
 		$sut = new Order(123);
-		$this->assertEquals('{"ID":123,"lines":[]}', json_encode($sut));
+		$decoded = json_decode(json_encode($sut));
+		$this->assertEquals(123, $decoded->ID);
 
 		$sut->lines = ['foo'];
-		$this->assertEquals('{"ID":123,"lines":["foo"]}', json_encode($sut));
+		$decoded = json_decode(json_encode($sut));
+		$this->assertEquals(123, $decoded->ID);
+		$this->assertEquals(['foo'], $decoded->lines);
 	}
 
 }

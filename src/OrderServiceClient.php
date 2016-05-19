@@ -19,7 +19,7 @@ class OrderServiceClient {
 	 * @throws \RuntimeException on failure.
 	 */
 	public function createOrder(Order $o){
-		$this->client->put("/$o->ID", ['body' => json_encode($o)]);
+		$this->client->put("/$o->ID", ['json' => $o]);
 	}
 
 }

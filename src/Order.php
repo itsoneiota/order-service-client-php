@@ -7,7 +7,8 @@ class Order extends JSONContainer {
 
 	protected $properties = [
 		'ID' => NULL,
-		'lines' => []
+		'lines' => [],
+		'additionalProperties' => []
 	];
 
 	public function __construct($ID){
