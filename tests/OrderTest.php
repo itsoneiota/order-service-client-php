@@ -12,10 +12,10 @@ class OrderTest extends \PHPUnit_Framework_TestCase {
 		$decoded = json_decode(json_encode($sut));
 		$this->assertEquals(123, $decoded->ID);
 
-		$sut->lines = ['foo'];
+		$sut->shipments = ['foo'];
 		$decoded = json_decode(json_encode($sut));
 		$this->assertEquals(123, $decoded->ID);
-		$this->assertEquals(['foo'], $decoded->lines);
+		$this->assertEquals(['foo'], $decoded->shipments);
 	}
 
 }

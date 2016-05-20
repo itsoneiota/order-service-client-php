@@ -9,7 +9,13 @@ class JSONContainer implements \JsonSerializable {
 	protected $properties = [];
 
 	public function __set($k, $v){
-		$this->properties[$k] = $v;
+
+		if (array_key_exists($k, $this->properties)){
+			$this->properties[$k] = $v;
+			return;
+		}
+
+		$this->properties['additionalProperties'][$k] = $v;
 	}
 
 	public function __get($k){

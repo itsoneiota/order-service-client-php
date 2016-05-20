@@ -7,7 +7,18 @@ class Order extends JSONContainer {
 
 	protected $properties = [
 		'ID' => NULL,
-		'lines' => [],
+        'clientID' => NULL,
+        'dateAdded' => NULL,
+        'channel' => NULL,
+        'customer' => NULL,
+        'billingAddress' => NULL,
+        'shipments' => [],
+        'payments' => [],
+        'productsSubtotalBeforeDiscounts' => NULL,
+        'deliverySubtotalBeforeDiscounts' => NULL,
+        'discounts' => [],
+        'total' => NULL,
+        'reciptText' => NULL,
 		'additionalProperties' => []
 	];
 
