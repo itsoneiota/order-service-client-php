@@ -10,7 +10,7 @@ class JSONContainer implements \JsonSerializable {
 
 	public function __set($k, $v){
 
-		if (array_key_exists($k, $this->properties)){
+		if ($k != "additionalProperties" && array_key_exists($k, $this->properties)){
 			$this->properties[$k] = $v;
 			return;
 		}
